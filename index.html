@@ -1,10 +1,155 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Darkworldbd</title>
-  </head>
-  <body>
-    <h1>Welcome to Darkworldbd!</h1>
-    <p>This is your official website.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Darkworldbd</title>
+  <style>
+    :root {
+      --bg-color: #0d0d0d;
+      --text-color: #ffffff;
+      --accent-color: #0ff;
+    }
+
+    body.light {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --accent-color: #007bff;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header, footer {
+      background: #111;
+      color: var(--text-color);
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav a {
+      color: var(--accent-color);
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    .toggle-mode {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      padding: 5px 10px;
+      background: var(--accent-color);
+      color: var(--bg-color);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 40px 20px;
+      border-bottom: 1px solid #222;
+    }
+
+    h2 {
+      color: var(--accent-color);
+    }
+
+    .slider-text {
+      font-size: 1.5em;
+      font-weight: bold;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="toggle-mode" onclick="toggleMode()">Toggle Mode</button>
+
+  <header>
+    <h1>Darkworldbd</h1>
+    <nav>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#blog">Blog</a>
+      <a href="#store">E-Commerce</a>
+      <a href="#forum">Forum</a>
+      <a href="#tools">Tools</a>
+      <a href="#entertainment">Entertainment</a>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h2>Welcome to Darkworldbd!</h2>
+    <p class="slider-text" id="slider-text">Your one-stop destination</p>
+  </section>
+
+  <section id="portfolio">
+    <h2>Personal Portfolio</h2>
+    <p>Showcase your work, projects, and achievements here.</p>
+  </section>
+
+  <section id="blog">
+    <h2>Blog / News</h2>
+    <p>Publish articles, tech news, and more for your visitors.</p>
+  </section>
+
+  <section id="store">
+    <h2>E-Commerce</h2>
+    <p>Sell your products or services right from your website.</p>
+  </section>
+
+  <section id="forum">
+    <h2>Forum / Community</h2>
+    <p>Create a space for people to discuss and interact.</p>
+  </section>
+
+  <section id="tools">
+    <h2>Tools / Apps</h2>
+    <p>Provide useful online tools, converters, or mini apps.</p>
+  </section>
+
+  <section id="entertainment">
+    <h2>Entertainment</h2>
+    <p>Share movies, games, and fun content here.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Darkworldbd. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('light');
+    }
+
+    const texts = [
+      "Your one-stop destination",
+      "Explore portfolio and blogs",
+      "Buy & sell with ease",
+      "Join our growing community",
+      "Try free tools and apps",
+      "Enjoy movies, games, and more"
+    ];
+    let i = 0;
+
+    setInterval(() => {
+      i = (i + 1) % texts.length;
+      const el = document.getElementById("slider-text");
+      el.classList.remove("slider-text");
+      void el.offsetWidth; // force reflow
+      el.innerText = texts[i];
+      el.classList.add("slider-text");
+    }, 3000);
+  </script>
+
+</body>
 </html>
