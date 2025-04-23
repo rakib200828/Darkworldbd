@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Darkworldbd</title>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      padding: 20px;
+      background-color: #000;
+    }
+    nav a {
+      color: cyan;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .logo {
+      margin: 30px auto;
+    }
+    .logo img {
+      width: 200px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Darkworldbd</h1>
+    <nav>
+      <a href="#">Portfolio</a>
+      <a href="#">Blog</a>
+      <a href="#">E-Commerce</a>
+      <a href="#">Forum</a>
+      <a href="#">Tools</a>
+      <a href="#">Entertainment</a>
+    </nav>
+  </header>
+
+  <div class="logo">
+    <img src="images/darkworld-logo.jpg" alt="Dark World Logo">
+  </div>
+</body>
+</html>
